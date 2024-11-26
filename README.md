@@ -17,13 +17,10 @@ Hangman is a word guessing game where players try to guess a hidden word one let
 ## Installation
 
 1. Clone the repository:
-```
 
 ## How to Play
 
 1. Run the game:
-```
-
 2. The game will display a hidden word with underscores representing each letter
 3. Guess one letter at a time
 4. You have 6 attempts to guess the word correctly
