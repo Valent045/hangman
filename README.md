@@ -14,10 +14,6 @@ Hangman is a word guessing game where players try to guess a hidden word one let
 - Track of remaining guesses
 - Display of previously guessed letters
 
-## Installation
-
-1. Clone the repository:
-
 ## How to Play
 
 1. Run the game:
