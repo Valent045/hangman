@@ -1,7 +1,6 @@
 class HangmanGame {
     constructor() {
         this.words = [];
-        this.loadWords();
         this.hangmanStates = [
             `
   +---+
@@ -73,9 +72,11 @@ class HangmanGame {
         this.livesDisplay = document.getElementById('lives');
         this.keyboard = document.getElementById('keyboard');
         
-        // Initialize the game
+        // Initialize the keyboard only
         this.initializeKeyboard();
-        this.newGame();
+        
+        // Load words first, then start the game
+        this.loadWords(); // Remove the newGame() call from here
         
         // Event listeners
         document.getElementById('new-game-btn').addEventListener('click', () => this.newGame());
@@ -158,11 +159,11 @@ class HangmanGame {
             const response = await fetch('words.txt');
             const text = await response.text();
             this.words = text.split('\n').filter(word => word.trim() !== '');
-            this.newGame(); // Start new game after words are loaded
+            this.newGame(); // Start new game only after words are loaded
         } catch (error) {
             console.error('Error loading words:', error);
-            // Fallback to a default word if loading fails
             this.words = ['hangman'];
+            this.newGame(); // Start new game with fallback word
         }
     }
 }
