@@ -169,5 +169,5 @@ class HangmanGame {
 
 // Start the game when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-    new HangmanGame();
+    window.hangmanGame = new HangmanGame();
 }); 
